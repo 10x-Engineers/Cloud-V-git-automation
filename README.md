@@ -2,6 +2,8 @@
 
 This is a very light-weight odoo application/module containing source code for getting the access token from github and using it to automatically create a multibranch pipeline on a jenkins instance.
 
+Currently it is designed for Cloud-V platform. But users can use it for their own CI application if they have same components as used in this platform.
+
 This module assumes following keypoints:
 
 - You have a jenkins instance already running
