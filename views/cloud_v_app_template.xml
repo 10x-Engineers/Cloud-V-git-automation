@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <template id="cloud_v_app_template" name="Cloud-V App Template">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+      <section class="s_title pt40 pb40 o_colored_level" data-vcss="001" data-snippet="s_title" data-name="Title" style="background-image: none;">
+        <div class="container s_allow_columns">
+          <h1 style="text-align: center;">
+            <font style="font-size: 62px;">Your Repository has been successfully integrated with Cloud-V!</font>
+            <br/>
+          </h1>
+        </div>
+      </section>
+      <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block" data-name="Text" style="background-image: none;">
+        <div class="container s_allow_columns">
+          <p> Following is the authentication token the Cloud-V GitHub app will use to authenticate with your repository (you do not have to save this token because it is already integrated with the CI pipeline).</p>
+	  <span><strong>Access Token:</strong> </span><pre><t t-esc="access_token"/></pre>
+	  <span><strong>Validity duration:</strong> </span><pre><t t-esc="validity_duration"/></pre>
+	  <span><strong>URL of the repository which is configured:</strong> </span><pre><t t-esc="github_repo_url"/></pre>
+	  <span><strong>Your Pipeline has been automatically created at this link:</strong> </span><pre><t t-esc="completed_process"/></pre>
+  	</div>
+      </section>
+    </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- First View -->
+        <record id="view_cloud_v_app_template" model="ir.ui.view">
+            <field name="name">Cloud-V App Template</field>
+            <field name="model">ir.ui.view</field>
+            <field name="arch" type="xml">
+                <!-- Reference to the template file using external ID -->
+                <template id="cloud_v_app_template"/>
+            </field>
+        </record>
+
+        <!-- Second View -->
+        <record id="view_cloud_v_app_template_2" model="ir.ui.view">
+            <field name="name">Cloud-V App Template for no token</field>
+            <field name="model">ir.ui.view</field>
+            <field name="arch" type="xml">
+                <!-- Reference to the template file using external ID -->
+                <template id="cloud_v_app_template_no_token"/>
+            </field>
+    </record>
+
+        <record id="view_github_repo_ask" model="ir.ui.view">
+            <field name="name">Page for asking github reposutory link</field>
+            <field name="model">ir.ui.view</field>
+            <field name="arch" type="xml">
+                <!-- Reference to the template file using external ID -->
+                <template id="github_repo_ask"/>
+            </field>
+        </record>
+    </data>
+</odoo>
+
