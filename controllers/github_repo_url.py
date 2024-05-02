@@ -13,11 +13,10 @@ class save_github_repo_url(http.Controller):
         # Setting present working directory
         working_directory = os.path.dirname(os.path.realpath(__file__))
 
+        # Receiving the github repository URL and token via pull request
         github_repo_url = post.get('github_url')
+        code = post.get('github_code')
 
-        codefile_read = open(f"{working_directory}/code.txt","r")
-        code = codefile_read.read()
-        codefile_read.close()
         token_url = "https://github.com/login/oauth/access_token"
         
         # Opening JSON file including client secret and client id

@@ -19,6 +19,7 @@
                             <p> Enter your GitHub repository URL below which you would like to
                                 integrate for Cloud-V CI</p>
                             <form action="/cloud-v-github-integration" method="post">
+                                <input type="hidden" id="github_code" name="github_code" t-att-value="github_code"/>
                                 <input type="text" id="github_url" name="github_url"
                                     placeholder="Enter GitHub repository URL" style="width: 500px;" />
                                 <button type="submit">Submit</button>

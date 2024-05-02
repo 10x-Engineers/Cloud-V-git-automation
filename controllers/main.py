@@ -9,9 +9,8 @@ class url_detect(http.Controller):
 
         code = http.request.params.get('code') # Getting the code from the github URL
         
-        #For simplicity, instead of passing the code via post request to other page, storing it in a file so that other module can access it locally rather than processing a post request on web.
-        codefile = open(f"{working_directory}/code.txt","w")
-        codefile.write(code)
-        codefile.close()
-        
-        return http.request.render('cloud_v_app.github_repo_ask')
+        return http.request.render('cloud_v_app.github_repo_ask',
+                    {
+                        'github_code':code
+                    }
+        )
