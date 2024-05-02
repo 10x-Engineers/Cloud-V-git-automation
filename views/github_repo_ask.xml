@@ -1,22 +1,26 @@
-
 <odoo>
     <data>
         <template id="github_repo_ask" name="GitHub App Repo">
             <t t-call="website.layout">
                 <div id="wrap" class="oe_structure oe_empty">
-                    <section class="s_title pt40 pb40 o_colored_level" data-vcss="001" data-snippet="s_title" data-name="Title" style="background-image: none;">
+                    <section class="s_title pt40 pb40 o_colored_level" data-vcss="001"
+                        data-snippet="s_title" data-name="Title" style="background-image: none;">
                         <div class="container s_allow_columns">
                             <h1 style="text-align: center;">
-                                <font style="font-size: 62px;">Thanks for integrating your GitHub account with Cloud-V GitHub App!</font>
-                                <br/>
+                                <font style="font-size: 62px;">Thanks for integrating your GitHub
+                                    account with Cloud-V GitHub App!</font>
+                                <br />
                             </h1>
                         </div>
                     </section>
-                    <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block" data-name="Text" style="background-image: none;">
+                    <section class="s_text_block pt40 pb40 o_colored_level"
+                        data-snippet="s_text_block" data-name="Text" style="background-image: none;">
                         <div class="container s_allow_columns">
-                            <p> Enter your GitHub repository URL below which you would like to integrate for Cloud-V CI</p>
-			    <form action="/cloud-v-github-integration" method="post">
-                                <input type="text" id="github_url" name="github_url" placeholder="Enter GitHub repository URL" style="width: 500px;"/>
+                            <p> Enter your GitHub repository URL below which you would like to
+                                integrate for Cloud-V CI</p>
+                            <form action="/cloud-v-github-integration" method="post">
+                                <input type="text" id="github_url" name="github_url"
+                                    placeholder="Enter GitHub repository URL" style="width: 500px;" />
                                 <button type="submit">Submit</button>
                             </form>
                         </div>
