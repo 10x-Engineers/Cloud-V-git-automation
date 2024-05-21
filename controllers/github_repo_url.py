@@ -41,8 +41,11 @@ class save_github_repo_url(http.Controller):
         if response.status_code == 200:
             if access_token!=None:
                 command = ['python3', f"{working_directory}/new_job.py", access_token, github_repo_url]
-                completed_process = subprocess.run(command, capture_output=True, text=True, check=True)
-                pipeline_link = completed_process.stdout
+                proc=subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                for line in proc.stdout:
+                    logger.info(line)
+                proc.wait()
+                pipeline_link = proc.stdout
                 return http.request.render('cloud_v_app.cloud_v_app_template',
                     {
                         'access_token':access_token, 
