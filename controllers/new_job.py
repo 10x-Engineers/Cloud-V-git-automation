@@ -244,7 +244,6 @@ configure_multibranch_pipeline(
     crumb_value,
     session
 )
-print(abcd)
 print(json_data["jenkins_url"]+f"/job/{pipeline_name}")
 
 

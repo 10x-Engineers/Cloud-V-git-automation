@@ -34,6 +34,7 @@ class save_github_repo_url(http.Controller):
 
         access_token = None
         validity_duration = None
+
         access_token =  response_json.get("access_token")
         validity_duration = response_json.get("expires_in")
         
@@ -41,19 +42,23 @@ class save_github_repo_url(http.Controller):
         if response.status_code == 200:
             if access_token!=None:
                 command = ['python3', f"{working_directory}/new_job.py", access_token, github_repo_url]
-                proc=subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-                for line in proc.stdout:
-                    logger.info(line)
+                proc=subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+                pipeline_link = proc.communicate()
                 proc.wait()
-                pipeline_link = proc.stdout
+                # pipeline_link = proc.stdout
                 return http.request.render('cloud_v_app.cloud_v_app_template',
                     {
                         'access_token':access_token, 
                         'validity_duration':validity_duration, 
                         'github_repo_url':github_repo_url, 
-                        'completed_process': pipeline_link
+                        'completed_process': pipeline_link[0]
                     }
                 )
             else:
                 access_token="No access token Recieved from GitHub!"
+                logger.info("Status Code: ")
+                logger.info(response.status_code)
+                logger.info("--- Response Content ---")
+                logger.info(response.text)
                 return http.request.render('cloud_v_app.cloud_v_app_template_no_token',{'access_token':access_token})
+
