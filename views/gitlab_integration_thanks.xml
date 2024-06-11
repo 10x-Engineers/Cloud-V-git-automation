@@ -1,0 +1,34 @@
+<!-- This xml renders the page when it recieves a gitlab personal access token and gitlab
+repository/project URL -->
+
+<odoo>
+  <data>
+    <template id="gitlab_integration_thanks" name="Cloud-V Gitlab Thanks">
+      <t t-call="website.layout">
+        <div id="wrap" class="oe_structure oe_empty">
+          <section class="s_title pt40 pb40 o_colored_level" data-vcss="001" data-snippet="s_title"
+            data-name="Title" style="background-image: none;">
+            <div class="container s_allow_columns">
+              <h1 style="text-align: center;">
+                <font style="font-size: 62px;">Your GitLab credentials are successfully added to
+                  Cloud-V!</font>
+                <br />
+              </h1>
+            </div>
+          </section>
+          <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block"
+            data-name="Text" style="background-image: none;">
+            <div class="container s_allow_columns">
+              <p> Following is the pipeline link which is automatically created for you. If you are
+                facing issues on this page, please email us at cloud-v@10xengineers.ai</p>
+              <span>
+                <strong>Your Pipeline has been automatically created at this link:</strong>
+              </span>
+              <pre><t t-esc="completed_process"/></pre>
+            </div>
+          </section>
+        </div>
+      </t>
+    </template>
+  </data>
+</odoo>

@@ -10,7 +10,10 @@
     'data': [
         'views/cloud_v_app_template.xml',
         'views/cloud_v_app_template_no_token.xml',
-        'views/github_repo_ask.xml'
+        'views/github_repo_ask.xml',
+        'views/gitlab_integration_thanks.xml',
+        'views/gitlab_token_ask.xml',
+        'views/gitlab_integration_no_token.xml'
         ],
     'demo': [],
     'installable': True,

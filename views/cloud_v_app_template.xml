@@ -1,3 +1,5 @@
+<!-- This page appears when a request to obtain github authentication token is successful and a CI pipeline is  -->
+
 <odoo>
     <data>
         <template id="cloud_v_app_template" name="Cloud-V App Template">

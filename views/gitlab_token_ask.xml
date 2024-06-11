@@ -1,0 +1,40 @@
+<!-- This page gets the github repository url and gitlab personal access token -->
+
+<odoo>
+    <data>
+        <template id="gitlab_token_ask" name="GitLab token prompt">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_title pt40 pb40 o_colored_level" data-vcss="001"
+                        data-snippet="s_title" data-name="Title" style="background-image: none;">
+                        <div class="container s_allow_columns">
+                            <h1 style="text-align: center;">
+                                <font style="font-size: 62px;">Thank you for integrating your GitLab
+                                    account with Cloud-V!</font>
+                                <br />
+                            </h1>
+                        </div>
+                    </section>
+                    <section class="s_text_block pt40 pb40 o_colored_level"
+                        data-snippet="s_text_block" data-name="Text" style="background-image: none;">
+                        <div class="container s_allow_columns">
+                            <p> Enter GitLab access token and GitLab repository URL for automatic CI
+                                creation and
+                                webhook management</p>
+                            <form action="/cloud-v-gitlab-integration" method="post">
+                                <input type="text" id="gitlab_access_token"
+                                    name="gitlab_access_token"
+                                    placeholder="Enter GitLab personal access token"
+                                    style="width: 500px;" />
+                                <input type="text" id="gitlab_repo_url" name="gitlab_repo_url"
+                                    placeholder="Enter GitLab Project/Repo URL"
+                                    style="width: 500px;" />
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
